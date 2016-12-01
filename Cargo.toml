@@ -1,0 +1,6 @@
+[package]
+name = "rust-wasm-example"
+version = "0.1.0"
+authors = ["Lin Clark <lclark@mozilla.com>"]
+
+[dependencies]

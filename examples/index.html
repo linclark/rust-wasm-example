@@ -1,0 +1,19 @@
+<script type='text/javascript'>
+  var Module = {};
+
+  fetch('lib.wasm')
+    .then(response => response.arrayBuffer())
+    .then(buffer => {
+      Module.wasmBinary = buffer;
+
+      var script = document.createElement('script');
+      script.src = "lib.js";
+      script.onload = function() {
+        console.log("Emscripten boilerplate loaded.")
+        const n = 13;
+        const result = _rust_function(n);
+        console.log(`result: ${result}`);
+      }
+      document.body.appendChild(script);
+    });
+</script>
